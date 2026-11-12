@@ -1,0 +1,16 @@
+schema = 1
+id = "iris_horizon"
+slug = "iris_horizon"
+title = "Iris Shaders for Horizon"
+description = "Native port of Iris & OptiFine shader pack support for Horizon (Rust/wgpu) with real-time Voxel Path Tracing (Rethinking Voxels), compute shaders and high-performance chunk GPU culling."
+kind = "native-mod"
+version = "0.1.0"
+authors = ["Kalle", "Iris Shaders Team", "Horizon Community"]
+license = "LGPL-3.0-or-later"
+repository = "https://github.com/Kalle/iris-horizon"
+game = "26.3"
+file = "horizon-native-mods/iris_horizon-0.1.0.hnmod"
+checksum = "SHA-256:762c1b375a39271b06ea33af89e90b1d88c2d1c029d84af89c780939532b69fe"
+page = "https://playhorizon.dev/mods/iris_horizon"
+dependency = false
+verdict = "Unsigned"

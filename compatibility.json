@@ -1,0 +1,7 @@
+{
+  "schema": 1,
+  "horizon_revision": "9d4f6c8a2b1e4f3a9c7d8e0f1a2b3c4d5e6f7a8b",
+  "horizon_mixins_revision": "main",
+  "min_hook_api": "26.3",
+  "target": "client"
+}

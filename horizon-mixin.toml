@@ -1,0 +1,18 @@
+[mod]
+id = "iris_horizon"
+name = "Iris Shaders for Horizon"
+version = "0.1.0"
+description = "Iris/OptiFine shaderpack loader & high-performance modern rendering pipeline for Horizon"
+authors = ["Horizon Rust Community"]
+
+[compatibility]
+horizon = ">=0.1.0"
+target_api = "26.3"
+
+[[mixins]]
+target = "horizon_render::pipeline::WorldRenderer"
+mixin = "iris_horizon::mixins::render_mixin::WorldRendererMixin"
+
+[[mixins]]
+target = "horizon_render::chunk::ChunkRenderer"
+mixin = "iris_horizon::mixins::render_mixin::ChunkRendererMixin"
