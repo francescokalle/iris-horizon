@@ -1,4 +1,4 @@
-// Rendering dettagli su schermo (F3): nome shader pack, profilo attivo, tempo frame shader
+// F3 debug HUD details overlay hook.
 fn iris_horizon_hud(
     game: &mut crate::game::Game<'_>,
     batch: &mut horizon_client::hud::HudBatch,

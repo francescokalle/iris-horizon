@@ -1,4 +1,4 @@
-// Il pulsante/riga della mod in Opzioni > Mod.
+// The mod's row in Options > Mods.
 fn iris_horizon_listed(mods: &mut Vec<crate::game::native_hooks::NativeMod>) {
     use crate::game::iris_horizon as m;
     mods.push(crate::game::native_hooks::NativeMod {

@@ -1,4 +1,4 @@
-// Bridge tra Iris Shaders e il motore client Horizon (Game, Finestra, Opzioni).
+// Bridge between Iris Shaders and the Horizon client engine (Game, Window, Options).
 
 use crate::game::Game;
 use crate::game::iris_horizon as iris;
@@ -10,6 +10,7 @@ thread_local! {
     static AVAILABLE_PACKS: RefCell<Vec<String>> = RefCell::new(Vec::new());
 }
 
+/// Returns the shaderpacks directory inside Horizon's installation folder
 pub fn shaderpacks_dir() -> PathBuf {
     if let Ok(appdata) = std::env::var("APPDATA") {
         let p = PathBuf::from(appdata).join("horizon").join("shaderpacks");
@@ -22,6 +23,7 @@ pub fn shaderpacks_dir() -> PathBuf {
     }
 }
 
+/// Rescans available shaderpack directories and .zip files
 pub fn scan_shaderpacks() {
     let mut packs = vec!["(OFF)".to_string()];
     let dir = shaderpacks_dir();
@@ -44,6 +46,7 @@ pub fn settings(_game: &mut Game<'_>) -> iris::IrisSettings {
 
 pub fn click(_game: &mut Game<'_>, button: usize) {
     if button == 1 {
+        // Cycle through discovered shaderpacks
         scan_shaderpacks();
         AVAILABLE_PACKS.with(|packs_ref| {
             let packs = packs_ref.borrow();
@@ -64,7 +67,7 @@ pub fn click(_game: &mut Game<'_>, button: usize) {
 }
 
 pub fn frame(_game: &mut Game<'_>) {
-    // Sincronizzazione per frame
+    // Per-frame graphics state synchronization
 }
 
 pub fn command(_game: &mut Game<'_>, command: &str) -> bool {
@@ -87,4 +90,5 @@ pub fn hud(
     _batch: &mut horizon_client::hud::HudBatch,
     _corners: &mut horizon_client::extras_hud::Corners,
 ) {
+    // F3 debug HUD overlay integration
 }
